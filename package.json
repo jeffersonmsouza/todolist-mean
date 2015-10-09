@@ -1,0 +1,34 @@
+{
+  "name": "todolist-mean",
+  "version": "1.0.0",
+  "description": "A simple todolist built with MEAN",
+  "main": "server.js",
+  "scripts": {
+    "ru": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffersonmsouza/todolist-mean.git"
+  },
+  "keywords": [
+    "mean"
+  ],
+  "author": "Jefferson M Souza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeffersonmsouza/todolist-mean/issues"
+  },
+  "homepage": "https://github.com/jeffersonmsouza/todolist-mean",
+  "devDependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.1.10",
+    "morgan": "^1.6.1"
+  },
+  "dependencies": {
+    "angular": "^1.4.7"
+  }
+}
