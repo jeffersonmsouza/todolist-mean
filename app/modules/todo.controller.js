@@ -19,7 +19,6 @@ function TodoController(todoRepository){
     
     function list() {
         todoRepository.list().then(function(data){
-            debugger;
             vm.todos = data;
         });
     }
@@ -27,6 +26,7 @@ function TodoController(todoRepository){
     function save(){
         todoRepository.save({text: vm.text}).then(function(data){
             vm.todos = data;
+            vm.text = "";
         });
     }
     

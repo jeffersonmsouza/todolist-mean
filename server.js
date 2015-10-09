@@ -67,7 +67,7 @@ function deleteTodo(request, response){
 //lists the todos
 app.get('/api/todos', listTodos);
 app.post('/api/todos', saveTodo);
-app.delete('/api/todos/:todo_id', deleteTodo)
+app.delete('/api/todo/:todo_id', deleteTodo);
 
 app.get('*', function(request, response){
     response.sendfile('./public/index.html')

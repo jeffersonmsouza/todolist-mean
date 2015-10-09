@@ -3,20 +3,20 @@
     <head>
         <title>Todo MEAN</title>
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" />
-        <script type="text/javascript" src="../dist/app.js"></script>
+        <script type="text/javascript" src="dist/app.js"></script>
     </head>
     <body ng-app="todo">
         <div class='container' ng-controller="TodoController as vm">
             <h1>TODO App</h1>
             
             <div class='jumbotron text-center'>
-                <h2>There are {{vm.todos.length}} Todos in our database.</h2>
+                <h2>There are {{vm.todos.length}} Todo(s) waiting for you "to do".</h2>
             </div>
             
             <div class='row'>
                 <div class='checkbox' ng-repeat='todo in vm.todos'>
                     <label>
-                        <input type="checkbox" ng-click='vm.remove(todo.id)'/> {{todo.text}}
+                        <input type="checkbox" ng-click='vm.remove(todo._id)'/> {{todo.text}}
                     </label>
                 </div>
             </div>
@@ -24,12 +24,12 @@
             
             <div class='row'>
                 <div>
-                    <form>
+                    <form ng-submit="vm.save()">
                         <div class='form-group'>
-                            <input type="text" class="form-control input-lg text-center" ng-model="vm.text" placeholder='Add your todo'/>
+                            <input type="text" class="form-control input-lg" ng-model="vm.text" placeholder='Add your todo'/>
                         </div>
                         
-                        <button type='button' class='btn btn-primary btn-lg' ng-click='vm.save()'>Add</button>
+                        <button type='submit' class='btn btn-primary btn-lg' >Add</button>
                     </form>
                 </div>
             </div>

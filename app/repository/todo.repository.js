@@ -13,20 +13,18 @@ function TodoRepository($http) {
     
     function list(){
         return $http.get('/api/todos').then(function(resp){
-            debugger;
             return resp.data;
         });
     }
     
     function save(todo){
         return $http.post('/api/todos', todo).then(function(resp){
-            debugger;
             return resp.data;
         });
     }
     
     function remove(id){
-        return $http.delete('/api/todo' + id).then(function(resp){
+        return $http.delete('/api/todo/' + id).then(function(resp){
             return resp.data;
         });
     }

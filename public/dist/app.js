@@ -28925,7 +28925,6 @@ function TodoController(todoRepository){
     
     function list() {
         todoRepository.list().then(function(data){
-            debugger;
             vm.todos = data;
         });
     }
@@ -28933,6 +28932,7 @@ function TodoController(todoRepository){
     function save(){
         todoRepository.save({text: vm.text}).then(function(data){
             vm.todos = data;
+            vm.text = "";
         });
     }
     
@@ -28957,20 +28957,18 @@ function TodoRepository($http) {
     
     function list(){
         return $http.get('/api/todos').then(function(resp){
-            debugger;
             return resp.data;
         });
     }
     
     function save(todo){
         return $http.post('/api/todos', todo).then(function(resp){
-            debugger;
             return resp.data;
         });
     }
     
     function remove(id){
-        return $http.delete('/api/todo' + id).then(function(resp){
+        return $http.delete('/api/todo/' + id).then(function(resp){
             return resp.data;
         });
     }
